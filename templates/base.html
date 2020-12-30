@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+        {% block title %}
+        <title>{{ title }}</title>
+        {% endblock %}
+    </head>
+    <body>
+        {% block header %}
+        <p>
+            <a href="/">Home</a>
+            <a href="/admin">Admin</a>
+            <a href="/delete-posts">Delete Posts</a>
+        </p>
+        {% endblock %}
+
+        {% block content %}
+            {{ content|safe }}
+        {% endblock %}
+    </body>
+</html>
