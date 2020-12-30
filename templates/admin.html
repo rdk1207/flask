@@ -1,20 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="admin" method="post">
-    <h2>Login:</h2>
-    User: <input type="text" name="user"/>
-    <br/>
-    Password: <input type="password" name="password"/>
-    <br/>
+<details open>
+    <summary>
+        <h2>New Post:</h2>
+    </summary>
+    <form action="admin" method="post">
+        User: <input type="text" name="user"/>
+        <br/>
+        Password: <input type="password" name="password"/>
+        <br/>
 
-    <h2>Title:</h2>
-    <input type="text" name="title"/>
+        <h2>Title:</h2>
+        <input type="text" name="title"/>
 
-    <h2>Content:</h2>
-    <textarea value="content" name="content"></textarea>
-    <br/>
-    <!-- Delete All Posts <input type="checkbox" name="delete-posts"> -->
-    <br/>
-    <input type="submit">
-</form>
+        <h2>Content:</h2>
+        <textarea value="content" name="content"></textarea>
+        <br/>
+        <!-- Delete All Posts <input type="checkbox" name="delete-posts"> -->
+        <br/>
+        <input type="submit" value="Submit Post">
+    </form>
+</details>
+<details open>
+    <summary>
+        <h2>Delete Posts:</h2>
+    </summary>
+    <form action="delete-posts" method="get">
+        User: <input type="text" name="user"/>
+        <br/>
+        Password: <input type="password" name="password"/>
+        <br/>
+        <input type="submit" value="delete posts">
+    </form>
+</details>
 {% endblock %}

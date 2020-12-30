@@ -26,9 +26,16 @@ def admin():
                 writer.write(request.form['content'])
             finally:
                 writer.close
-        return render_template('base.html', title='Post Written', content='Post written')
+        return render_template('base.html', title=content, content=content)
     else:
         return render_template('admin.html', title='admin')
+
+
+@app.route('/delete-posts' methods=['GET'])
+def delete_posts():
+    shutil.rmtree('posts')
+    os.mkdir('posts')
+    return  render_template('base.html', title='Posts deleted', content='Posts deleted')
 
 @app.route('/posts/<title>')
 def readPost(title):
