@@ -30,12 +30,6 @@ def admin():
     else:
         return render_template('admin.html', title='admin')
 
-@app.route('/delete-posts')
-def deletePosts():
-    shutil.rmtree('posts')
-    os.mkdir('posts')
-    return  render_template('base.html', title='Posts deleted', content='Posts deleted')
-
 @app.route('/posts/<title>')
 def readPost(title):
     with open('posts/' + title) as reader:
