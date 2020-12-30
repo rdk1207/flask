@@ -6,6 +6,6 @@ Run `> python3 -m venv venv`
 
 Run `> venv\Scripts\activate.bat`
 
-Run `> pip install flask markdown`
+Run `> pip install -r requirements.txt`
 
 Run `> flask run`
