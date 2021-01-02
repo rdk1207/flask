@@ -30,8 +30,7 @@ def admin():
     else:
         return render_template('admin.html', title='admin')
 
-
-@app.route('/delete-posts' methods=['GET'])
+@app.route('/delete-posts')
 def delete_posts():
     shutil.rmtree('posts')
     os.mkdir('posts')
